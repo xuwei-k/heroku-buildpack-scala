@@ -7,14 +7,10 @@ detect_sbt() {
      _has_projectScalaFile $ctxDir || \
      _has_hiddenSbtDir $ctxDir || \
      _has_buildPropertiesFile $ctxDir ; then
-    return 0 
+    return 0
   else
-    return 1 
+    return 1
   fi
-}
-
-is_play() {
-  _has_playConfig $1
 }
 
 _has_sbtFile() {
@@ -80,7 +76,7 @@ count_files() {
 
 detect_play_lang() {
   local appDir=$1/app
-  
+
   local num_scala_files=$(count_files ${appDir} '*.scala')
   local num_java_files=$(count_files ${appDir} '*.java')
 
